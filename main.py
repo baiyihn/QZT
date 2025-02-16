@@ -404,7 +404,7 @@ def job_punch_clock(user, config_path, config):
 
 # 主程序入口
 if __name__ == "__main__":
-    config_path = Path("config.json")
+    config_path = Path("config.json")#配置文件路径和文件名称
 
     # 输出当前用户配置文件路径
     logger.info(f"当前用户配置文件路径: {config_path.resolve()}")
