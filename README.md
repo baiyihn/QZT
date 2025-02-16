@@ -62,7 +62,7 @@ pip install requests schedule pycryptodome opencv-python-headless
     }
 }
 ```
-请自行修改文件中的相关路径和配置信息。例如，如果您希望配置文件路径为`d:\桌面\config.json`，请在`main.py`的第407行修改如下：
+请自行修改文件中的相关路径和配置信息。例如，如果您希望配置文件路径为d:\桌面\config.json，请在`main.py`的第407行修改如下：
 ```python
 config_path = Path("d:\\桌面\\config.json")  # 配置文件名称路径
 
