@@ -153,25 +153,31 @@ def send_post_request(url, token, data, config_path, config):
 def check_or_create_config(config_path):
     if not config_path.exists():
         default_config = {
-          "tokens": [
+        "tokens": [
                 {
                     "token": "",
-                    "first_entry_time": "09:00",
-                    "punch_clock_time": "18:00",
-                    "last_updated": None,
+                    "first_entry_time": "08:31",  # 上班打卡时间
+                    "punch_clock_time": "18:21",  # 下班打卡时间
                     "messages": [
                         {
-                            "name": "用户名",
+                            "name": "用户名"  # 通知用户名
                         }
                     ],
-                    "punch_clock_data": {},
-                    "phone": "your_phone1",
-                    "password": "your_password1"
+                    "punch_clock_data": {
+                        "latitude": 123.456789,  # 请替换为实际的经度值
+                        "locationName": "xx公司，建议填写黔职通打卡页面地点名称，这个是可以随便修改的",
+                        "longitude": 987.654321,  # 请替换为实际的纬度值
+                        "checkRange": 99999  # 打卡范围，单位米，不需要管
+                    },
+                    "phone": "10086",  # 账号
+                    "password": "123456",  # 密码
+                    "last_updated": ""  # 不需要管
                 }
             ],
+            "first_entry_time_data": {},
             "pushplus": {
-                "token": "",  # 你的 PushPlus token
-                "topic": ""  # 你的 PushPlus topic
+                "token": "您的PushPlus token",
+                "topic": "2024"  # 您的PushPlus topic
             }
         }
         with open(config_path, 'w', encoding='utf-8') as config_file:
@@ -402,7 +408,7 @@ def job_punch_clock(user, config_path, config):
 
 # 主程序入口
 if __name__ == "__main__":
-    config_path = Path("config.json")#配置文件路径和文件名称
+    config_path = Path("config.json")#配置文件名称路径
 
     # 输出当前用户配置文件路径
     logger.info(f"当前用户配置文件路径: {config_path.resolve()}")
