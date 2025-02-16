@@ -15,14 +15,14 @@
 
 ### 1. 安装依赖
 在使用本项目之前，请确保安装了所需的Python库。您可以通过以下命令安装这些库：
-```
+```bash
 pip install requests schedule pycryptodome opencv-python-headless
 ```
 
 ### 2. 配置文件
 程序启动时会自动生成一个`config.json`配置文件，用于存储用户的Token、打卡时间和推送通知的相关信息。请根据实际情况修改配置文件中的内容。**注意：生成的默认配置中包含注释，请在填写实际信息前删除这些注释。**
 
-第一次运行时，只需填写`first_entry_time`、`punch_clock_time`、`phone`、`password`、`pushplus`、`punch_clock_data`等字段，例如：
+第一次运行时，只需填写`first_entry_time`、`punch_clock_time`、`phone`、`password`、`pushplus`、`punch_clock_data`等字段，`checkRange`不需要，例如：
 ```json
 {
     "tokens": [
@@ -36,9 +36,9 @@ pip install requests schedule pycryptodome opencv-python-headless
                 }
             ],
             "punch_clock_data": {
-                "latitude": “经度不需要双引号，这里是因为需要README.md好看”,
+                "latitude": 32.97672338266904,
                 "locationName": "xx公司，建议填写黔职通打卡页面地点名称，这个是可以随便修改的",
-                "longitude": “经度不需要双引号”,
+                "longitude": 119.146751801377,
                 "checkRange": 99999
             },
             "phone": "10086",
