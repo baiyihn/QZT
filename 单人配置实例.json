@@ -1,0 +1,28 @@
+{
+    "tokens": [
+        {
+            "token": "",
+            "first_entry_time": "08:31",
+            "punch_clock_time": "18:21",
+            "messages": [
+                {
+                    "name": "蔡徐坤"
+                }
+            ],
+            "punch_clock_data": {
+                "latitude": 32.97672338266904,
+                "locationName": "xx公司，建议填写黔职通打卡页面地点名称，这个是可以随便修改的",
+                "longitude": 119.046751801377,
+                "checkRange": 99999
+            },
+            "phone": "10086",
+            "password": "123456",
+            "last_updated": ""
+        }
+    ],
+    "first_entry_time_data": {},
+    "pushplus": {
+        "token": "pushplus的token",
+        "topic": "群组"
+    }
+}
