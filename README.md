@@ -20,7 +20,7 @@ pip install requests schedule pycryptodome opencv-python-headless
 
 ### 2. 配置文件
 程序启动时会自动生成一个`config.json`配置文件，用于存储用户的Token、打卡时间和推送通知的相关信息。请根据实际情况修改配置文件中的内容，例如：
-```json，代码407行数自行修改文件相关路径和文件名
+```json
 {
     "tokens": [
         {
@@ -62,6 +62,9 @@ pip install requests schedule pycryptodome opencv-python-headless
     }
 }
 ```
+请自行修改文件中的相关路径和配置信息。例如，如果您希望配置文件路径为`d:\桌面\config.json`，请在`main.py`的第407行修改如下：
+```python
+config_path = Path("d:\\桌面\\config.json")  # 配置文件名称路径
 
 ### 3. 运行程序
 在配置文件设置完成后，您可以直接运行`main.py`文件。程序会根据配置文件中的设置自动完成打卡任务。
