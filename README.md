@@ -2,7 +2,8 @@
 # 黔职通自动打卡程序
 
 ## 简介
-本项目是一个全自动打卡程序，旨在帮助用户自动化完成每日的上班和下班打卡任务。系统具备自动Token续签功能，并通过PushPlus进行通知。支持多用户同时使用。
+本项目是一个全自动打卡程序，旨在帮助用户自动化完成每日的上班和下班打卡任务。系统具备自动Token续签功能，并通
+过PushPlus进行通知。支持多用户同时使用。
 
 ## 主要功能
 1. **全自动打卡**：根据配置的时间自动完成上班和下班的打卡任务。
@@ -14,7 +15,7 @@
 
 ### 1. 安装依赖
 在使用本项目之前，请确保安装了所需的Python库。您可以通过以下命令安装这些库：
-```bash
+```
 pip install requests schedule pycryptodome opencv-python-headless
 ```
 
@@ -35,9 +36,9 @@ pip install requests schedule pycryptodome opencv-python-headless
                 }
             ],
             "punch_clock_data": {
-                "latitude": 经度,
+                "latitude": “经度不需要双引号，这里是因为需要README.md好看”,
                 "locationName": "xx公司，建议填写黔职通打卡页面地点名称，这个是可以随便修改的",
-                "longitude": 经度,
+                "longitude": “经度不需要双引号”,
                 "checkRange": 99999
             },
             "phone": "10086",
@@ -48,7 +49,7 @@ pip install requests schedule pycryptodome opencv-python-headless
     "first_entry_time_data": {},
     "pushplus": {
         "token": "您的PushPlus token",
-        "topic": "2024"  // 您的PushPlus topic
+        "topic": "您的PushPlus topic" 
     }
 }
 ```
@@ -56,7 +57,6 @@ pip install requests schedule pycryptodome opencv-python-headless
 ```python
 config_path = Path("d:\\桌面\\config.json")  # 配置文件名称路径
 ```
-**注意：上述注释（// 您的PushPlus topic）也需要删除。**
 
 ### 3. 运行程序
 在配置文件设置完成后，您可以直接运行`main.py`文件。程序会根据配置文件中的设置自动完成打卡任务。
