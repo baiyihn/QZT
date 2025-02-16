@@ -15,7 +15,8 @@
 
 ### 1. 安装依赖
 在使用本项目之前，请确保安装了所需的Python库。您可以通过以下命令安装：
-```bash
+```
+bash
 pip install requests schedule pycryptodome opencv-python-headless
 ```
 
@@ -73,4 +74,3 @@ python main.py
 
 ## 免责声明
 本项目仅用于学习和交流目的。使用本项目进行打卡时，请确保您已获得相关系统的授权，并遵守相关法律法规及政策。开发者对于使用本项目产生的任何问题或后果不负责任。
-```
