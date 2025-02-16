@@ -15,7 +15,7 @@
 ### 1. 安装依赖
 在使用本项目之前，请确保安装了所需的Python库。您可以通过以下命令安装：
 ```bash
-pip install requests schedule pycryptodome opencv-python-headless
+pip install -i https://mirrors.aliyun.com/pypi/simple/ requests schedule pycryptodome opencv-python-headless
 ```
 
 ### 2. 配置文件
