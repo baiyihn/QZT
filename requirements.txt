@@ -1,0 +1,5 @@
+requests
+schedule
+pycryptodome
+opencv-python-headless
+numpy
