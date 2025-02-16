@@ -19,7 +19,9 @@ pip install requests schedule pycryptodome opencv-python-headless
 ```
 
 ### 2. 配置文件
-程序启动时会自动生成一个`config.json`配置文件，用于存储用户的Token、打卡时间和推送通知的相关信息。请根据实际情况修改配置文件中的内容，第一次运行，只需填写`first_entry_time`、`punch_clock_time`、`phone`、`password``pushplus`，`punch_clock_data`例如：
+程序启动时会自动生成一个`config.json`配置文件，用于存储用户的Token、打卡时间和推送通知的相关信息。请根据实际情况修改配置文件中的内容。**注意：生成的默认配置中包含注释，请在填写实际信息前删除这些注释。**
+
+第一次运行时，只需填写`first_entry_time`、`punch_clock_time`、`phone`、`password`、`pushplus`、`punch_clock_data`等字段，例如：
 ```json
 {
     "tokens": [
@@ -46,13 +48,15 @@ pip install requests schedule pycryptodome opencv-python-headless
     "first_entry_time_data": {},
     "pushplus": {
         "token": "您的PushPlus token",
-        "topic": "2024"  # 您的PushPlus topic
+        "topic": "2024"  // 您的PushPlus topic
     }
 }
 ```
 请自行修改文件中的相关路径和配置信息。例如，如果您希望配置文件路径为d:\桌面\config.json，请在`main.py`的第407行修改如下：
 ```python
 config_path = Path("d:\\桌面\\config.json")  # 配置文件名称路径
+```
+**注意：上述注释（// 您的PushPlus topic）也需要删除。**
 
 ### 3. 运行程序
 在配置文件设置完成后，您可以直接运行`main.py`文件。程序会根据配置文件中的设置自动完成打卡任务。
@@ -66,7 +70,7 @@ python main.py
 ## 注意事项
 1. 请确保配置文件中的手机号和密码正确无误。
 2. 使用PushPlus发送通知时，请确保PushPlus的Token和Topic正确配置。
-   
+
 ## 免责声明
-本项目仅用于学习和交流目的。使用本项目进行打卡时，请确保您已获得相关系统的授权，并遵守相关法律法规及公司政策。开发者不对使用本项目而导致的任何问题或后果负责。
+本项目仅用于学习和交流目的。使用本项目进行打卡时，请确保您已获得相关系统的授权，并遵守相关法律法规及政策。开发者不对使用本项目而导致的任何问题或后果负责。
 ```
