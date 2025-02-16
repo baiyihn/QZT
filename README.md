@@ -2,8 +2,7 @@
 # 黔职通自动打卡程序
 
 ## 简介
-本项目是一个全自动打卡程序，旨在帮助用户自动化完成每日的上班和下班打卡任务。系统具备自动Token续签功能，并通
-过PushPlus进行通知。支持多用户同时使用。
+本项目是一个全自动打卡程序，旨在帮助用户自动化完成每日的上班和下班打卡任务。系统具备自动Token续签功能，并通过PushPlus进行通知。支持多用户同时使用。
 
 ## 主要功能
 1. **全自动打卡**：根据配置的时间自动完成上班和下班的打卡任务。
@@ -20,40 +19,31 @@ pip install requests schedule pycryptodome opencv-python-headless
 ```
 
 ### 2. 配置文件
-程序启动时会自动生成一个`config.json`配置文件，用于存储用户的Token、打卡时间和推送通知的相关信息。请根据实际情况修改配置文件中的内容，第一次运行，只需填写first_entry_time、
-punch_clock_time、phone、password、pushplus，例如：
+程序启动时会自动生成一个`config.json`配置文件，用于存储用户的Token、打卡时间和推送通知的相关信息。请根据实际情况修改配置文件中的内容，第一次运行，只需填写`first_entry_time`、`punch_clock_time`、`phone`、`password`、`pushplus`，`punch_clock_data`例如：
 ```json
 {
     "tokens": [
         {
             "token": "",
-            "first_entry_time": "09:00",
-            "punch_clock_time": "18:00",
-            "last_updated": null,
+            "first_entry_time": "08:31",
+            "punch_clock_time": "18:21",
             "messages": [
                 {
-                    "name": "张三",
+                    "name": "蔡徐坤"
                 }
             ],
-            "punch_clock_data": {},
-            "phone": "13800138000",
-            "password": "123456"
-        },
-        {
-            "token": "",
-            "first_entry_time": "09:05",
-            "punch_clock_time": "18:05",
-            "last_updated": null,
-            "messages": [
-                {
-                    "name": "李四",
-                }
-            ],
-            "punch_clock_data": {},
-            "phone": "13900139000",
-            "password": "654321"
+            "punch_clock_data": {
+                "latitude": 32.97672338266904,
+                "locationName": "xx公司，建议填写黔职通打卡页面地点名称，这个是可以随便修改的",
+                "longitude": 119.046751801377,
+                "checkRange": 99999
+            },
+            "phone": "10086",
+            "password": "123456",
+            "last_updated": ""
         }
     ],
+    "first_entry_time_data": {},
     "pushplus": {
         "token": "您的PushPlus token",
         "topic": "2024"  # 您的PushPlus topic
@@ -79,3 +69,4 @@ python main.py
    
 ## 免责声明
 本项目仅用于学习和交流目的。使用本项目进行打卡时，请确保您已获得相关系统的授权，并遵守相关法律法规及公司政策。开发者不对使用本项目而导致的任何问题或后果负责。
+```
