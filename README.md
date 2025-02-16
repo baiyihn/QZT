@@ -19,7 +19,7 @@ pip install requests schedule pycryptodome opencv-python-headless
 ```
 
 ### 2. 配置文件
-程序启动时会自动生成一个`config.json`配置文件，用于存储用户的Token、打卡时间和推送通知的相关信息。请根据实际情况修改配置文件中的内容，第一次运行，只需填写`first_entry_time`、`punch_clock_time`、`phone`、`password`、`pushplus`，`punch_clock_data`例如：
+程序启动时会自动生成一个`config.json`配置文件，用于存储用户的Token、打卡时间和推送通知的相关信息。请根据实际情况修改配置文件中的内容，第一次运行，只需填写`first_entry_time`、`punch_clock_time`、`phone`、`password``pushplus`，`punch_clock_data`例如：
 ```json
 {
     "tokens": [
@@ -29,13 +29,13 @@ pip install requests schedule pycryptodome opencv-python-headless
             "punch_clock_time": "18:21",
             "messages": [
                 {
-                    "name": "蔡徐坤"
+                    "name": "用户名"
                 }
             ],
             "punch_clock_data": {
-                "latitude": 32.97672338266904,
+                "latitude": 经度,
                 "locationName": "xx公司，建议填写黔职通打卡页面地点名称，这个是可以随便修改的",
-                "longitude": 119.046751801377,
+                "longitude": 经度,
                 "checkRange": 99999
             },
             "phone": "10086",
