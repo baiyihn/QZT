@@ -153,7 +153,7 @@ def send_post_request(url, token, data, config_path, config):
 def check_or_create_config(config_path):
     if not config_path.exists():
         default_config = {
-            "tokens": [
+          "tokens": [
                 {
                     "token": "",
                     "first_entry_time": "09:00",
@@ -161,9 +161,7 @@ def check_or_create_config(config_path):
                     "last_updated": None,
                     "messages": [
                         {
-                            "name": "用户1",
-                            "content": "上班打卡成功",
-                            "uid": "用户1的uid"
+                            "name": "用户名",
                         }
                     ],
                     "punch_clock_data": {},
@@ -172,8 +170,8 @@ def check_or_create_config(config_path):
                 }
             ],
             "pushplus": {
-                "token": "cadfb817896a449cb8b89c63b8ff10b6",  # 你的 PushPlus token
-                "topic": "2024"  # 你的 PushPlus topic
+                "token": "",  # 你的 PushPlus token
+                "topic": ""  # 你的 PushPlus topic
             }
         }
         with open(config_path, 'w', encoding='utf-8') as config_file:
