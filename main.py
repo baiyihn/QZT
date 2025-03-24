@@ -34,7 +34,7 @@ class CaptchaHandler:
     def __init__(self, phone, password):
         self.phone = phone
         self.passwd = password
-        self.base_url = "http://gwsxapp.gzzjzhy.com"  # 请确保URL是正确的
+        self.base_url = "http://gwsxapp.gzsdata.com"  # 请确保URL是正确的
 
     def encrypt_aes_ecb(self, plaintext, key):
         aes = AES.new(key, AES.MODE_ECB)
@@ -44,7 +44,7 @@ class CaptchaHandler:
 
     def request_post(self, url, data):
         headers = {
-            "user-agent": "Mozilla/5.0 ...",
+            "user-agent": "Mozilla/5.0 (Linux; Android 14; 22081212C Build/UKQ1.231003.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/126.0.6478.71 Mobile Safari/537.36 uni-app Html5Plus/1.0 (Immersed/29.333334)",
             "Content-Type": "application/json"
         }
         try:
@@ -127,7 +127,7 @@ class CaptchaHandler:
 # 发送POST请求的函数
 def send_post_request(url, token, data, config_path, config):
     headers = {
-        "User-Agent": "Mozilla/5.0 ...",
+        "User-Agent": "Mozilla/5.0 (Linux; Android 14; 22081212C Build/UKQ1.231003.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/126.0.6478.71 Mobile Safari/537.36 uni-app Html5Plus/1.0 (Immersed/29.333334)",
         "Content-Type": "application/json",
         "token": token
     }
@@ -317,7 +317,7 @@ def job_first_entry(user, config_path, config):
     delay = random.randint(0, 500)
     time.sleep(delay)
     logger.info(f"开始上班打卡任务: {user_name}")
-    response = send_post_request('http://gwsxapp.gzzjzhy.com/api/workClock/punchClock', token, user['punch_clock_data'],
+    response = send_post_request('http://gwsxapp.gzsdata.com/api/workClock/punchClock', token, user['punch_clock_data'],
                                  config_path, config)
     if response is not None and response.get("code") == 0:
         logger.info(f"{user_name} 要每天开心呀！今天已经打卡成功了！")
@@ -356,7 +356,7 @@ def job_punch_clock(user, config_path, config):
     delay = random.randint(0, 500)
     time.sleep(delay)
     logger.info(f"开始下班打卡任务: {user_name}")
-    response = send_post_request('http://gwsxapp.gzzjzhy.com/api/workClock/punchClock', token, user['punch_clock_data'],
+    response = send_post_request('http://gwsxapp.gzsdata.com/api/workClock/punchClock', token, user['punch_clock_data'],
                                  config_path, config)
     if response is not None and response.get("code") == 0:
         logger.info(f"{user_name} 好好休息，属于自己的时间已经成功到来！")
@@ -408,7 +408,7 @@ def job_punch_clock(user, config_path, config):
 
 # 主程序入口
 if __name__ == "__main__":
-    config_path = Path("config.json")#配置文件名称路径
+    config_path = Path("D:\\下载\\config.json")#配置文件名称路径
 
     # 输出当前用户配置文件路径
     logger.info(f"当前用户配置文件路径: {config_path.resolve()}")
